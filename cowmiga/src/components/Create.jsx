@@ -22,15 +22,14 @@ const Create = () => {
     const info = { ticker };
 
     fetch('https://orbitalfastapi.herokuapp.com/stocksearch', {
-      mode: 'no-cors',
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(info)
     }).then((result) => result.json()).then(value => settup(JSON.parse(value)))
 
       .catch(err => {
-        console.log("error:", err)
-      })
+        console.log("error:", err);
+      });
 
     addDoc(listRef, { ticker }).then(response => { console.log(response) })
       .catch(error => {
