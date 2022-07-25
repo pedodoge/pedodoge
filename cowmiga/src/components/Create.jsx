@@ -29,8 +29,8 @@ const Create = () => {
     }).then((result) => result.json()).then(value => settup(JSON.parse(value)))
 
       .catch(err => {
-        console.log("error:", err);
-      });
+        console.log("error:", err)
+      })
 
     addDoc(listRef, { ticker }).then(response => { console.log(response) })
       .catch(error => {
